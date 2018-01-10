@@ -6,6 +6,17 @@ Adds the `wp gh` command, which is a wrapper for `wp [plugin|theme] [update|inst
 
 One common workflow for managing a WordPress site through version control is to keep the entire codebase - WP, themes, and plugins - under version control. On this setup, updating third-party plugins and themes can be tedious, since updates may be frequent, requiring lots of commits and commit messages. `wp gh` does this work for you, by composing a commit message and performing the commit.
 
+## Installing This WP-CLI Package
+
+The following steps to install this package for WP-CLI were added by [Vital](http://https://github.com/VitalDevTeam).
+
+1. Find your active php.ini file: `php -i | grep php.ini`
+2. Edit that file and increase `memory_limit` to `512M`
+3. Restart Apache
+4. Install package: `wp package install boonebgorges/wp-cli-git-helper`
+5. By default, the package's path to `autoload.php` will be wrong. Open the package's main file: `/Users/your_user/.wp-cli/packages/vendor/boonebgorges/wp-cli-git-helper/wp-cli-git-helper.php`
+6. Change line 4 to: `require '../../vendor/autoload.php';`
+
 ## Examples
 
 Installing a plugin:
